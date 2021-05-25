@@ -1,0 +1,14 @@
+.container {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.container-paginas {
+    padding: 10px;
+    padding-left: 30px;
+}
+
+.texto-paginas {
+    color: white;
+}
