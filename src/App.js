@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Cabecalho from './components/Cabecalho';
+import imagem from './assets/images/logonoticias.svg'
 
 import Contato from './paginas/Contato';
 import Home from './paginas/Home';
@@ -14,6 +15,7 @@ function App() {
       <Cabecalho />
       <Switch>
         <Route exact path="/">
+          <image src={imagem} alt="Logo Noticia" />
           <Home />
         </Route>
         <Route path="/sobre">

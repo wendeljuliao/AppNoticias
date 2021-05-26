@@ -11,4 +11,10 @@
 
 .texto-paginas {
     color: white;
+    font-size: 25px;
+}
+
+.cabecalho__logo {
+    width: 3rem;
+    
 }
