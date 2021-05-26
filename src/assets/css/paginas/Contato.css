@@ -1,6 +1,7 @@
 .containercontato {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .containercampos {
@@ -15,17 +16,28 @@
 
 .preenchercontato {
     display: flex;
+    align-items: center;
     flex-direction: column;
+    margin-top: 6%;
     
 }
 
-.campos {
-    color: white;
+.campoNome {
+    width: 300px;
+    font-size: 15px;
+    margin-bottom: 7px;
 }
+
+.campoEmail {
+    width: 300px;
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
 
 .campoTexto {
     width: 300px;
     height: 200px;
-    font-size: 15px;
-    
+    font-size: 15px; 
+    margin-bottom: 14px;  
 }
