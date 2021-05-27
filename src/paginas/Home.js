@@ -4,11 +4,15 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import CardActions from '@material-ui/core/CardActions';
+import Button from '@material-ui/core/Button';
+import CardMedia from '@material-ui/core/CardMedia';
+
+import '../assets/css/paginas/Home.css'
 
 export default function Home() {
     const [noticias, setNoticias] = useState([])
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
 
     useEffect(() => {
         fetch('http://servicodados.ibge.gov.br/api/v3/noticias/', {
@@ -30,26 +34,29 @@ export default function Home() {
     }, [])
 
     return (
-        <div>
-            {noticias.map((noticia) => (      
-            <Card key={noticia.id} className={classes.root} variant="outlined">
-                <CardContent>
-
-                    <Typography className={classes.title} color="textSecondary" gutterBottom>
-                        {noticia.data_publicacao}
-                    </Typography>
-
-                    <Typography variant="h5" component="h2">
-                        {noticia.titulo}
-                    </Typography>
-                    <Typography className={classes.pos} color="textSecondary">
-                        {noticia.tipo}
+        <div className="container-cards">
+            {noticias.map((noticia) => (
+                <Card key={noticia.id} className={classes.root} variant="outlined">
+                    <CardContent>
+                        <Typography className={classes.title} color="textSecondary" gutterBottom>
+                            {noticia.data_publicacao}
                         </Typography>
-                    <Typography variant="body2" component="p">
-                        {noticia.introducao}
-                    </Typography>
-                </CardContent>
-            </Card>
+
+                        <Typography variant="h5" component="h2">
+                            {noticia.titulo}
+                        </Typography>
+                        <Typography className={classes.pos} color="textSecondary">
+                            {noticia.tipo}
+                        </Typography>
+                        <Typography variant="body2" component="p">
+                            {noticia.introducao}
+                        </Typography>
+                    </CardContent>
+                    <CardActions>
+                        <Button onClick={() => window.open(`${noticia.link}`, "_blank")} size="small">Leia Mais!</Button>
+                        {/* <a href="https://www.google.com">Leia Mais!</a> */}
+                    </CardActions>
+                </Card>
             ))}
         </div>
     )
@@ -58,6 +65,9 @@ export default function Home() {
 const useStyles = makeStyles({
     root: {
         minWidth: 275,
+        margin: 7,
+        borderRadius: 5,
+        background: '#EEE',
     },
     bullet: {
         display: 'inline-block',
@@ -69,5 +79,8 @@ const useStyles = makeStyles({
     },
     pos: {
         marginBottom: 12,
+    },
+    media: {
+        height: 140,
     },
 });

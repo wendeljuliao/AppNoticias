@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import imagem from '../assets/images/logonoticias.png'
+import imagem from '../assets/images/bitcoinn.png'
 import '../assets/css/components/Cabecalho.css'
 
 export default function Cabecalho() {
     return (
 
         <div className="container">
-            {/* <Link className="cabecalho__logo" to="/">
-                <image src={imagem} alt="Logo Noticia" />
-            </Link> */}
+            <Link className="container-paginas" to="/">
+                <img className="cabecalho__logo" src={imagem} alt="Logo Noticia" />
+            </Link>
             <Link className="container-paginas" to="/">
                 <p className="texto-paginas">Home</p>
             </Link>
